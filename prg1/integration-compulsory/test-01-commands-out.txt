@@ -1,0 +1,145 @@
+> clear_all
+Cleared all bites
+> get_bite_count
+Number of bites: 0
+> read "example-data/example-bites.txt" silent
+** Commands from 'example-data/example-bites.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-bites.txt'
+> get_bite_count
+Number of bites: 17
+> get_bite_name 1
+Name of bite with id 1 is 🍽
+> get_bite_coord 1
+Coordinates:
+(1,9)
+> get_bites_alphabetically
+Bites:
+1. 🍢: pos=(3,17), id=12
+2. 🍢: pos=(98,36), id=408
+3. 🍧: pos=(3,60), id=13
+4. 🍧: pos=(98,40), id=409
+5. 🍬: pos=(3,80), id=15
+6. 🍱: pos=(3,9), id=11
+7. 🍴: pos=(1,98), id=4
+8. 🍸: pos=(2,71), id=9
+9. 🍹: pos=(2,93), id=10
+10. 🍽: pos=(1,9), id=1
+11. 🤡: pos=(1,22), id=2
+12. 🤣: pos=(2,34), id=6
+13. 🤨: pos=(3,77), id=14
+14. 🤩: pos=(2,50), id=7
+15. 🤬: pos=(1,60), id=3
+16. 🤶: pos=(2,68), id=8
+17. 🤸: pos=(2,24), id=5
+> get_bites_distance_increasing
+Bites:
+1. 🍽: pos=(1,9), id=1
+2. 🍱: pos=(3,9), id=11
+3. 🍢: pos=(3,17), id=12
+4. 🤡: pos=(1,22), id=2
+5. 🤸: pos=(2,24), id=5
+6. 🤣: pos=(2,34), id=6
+7. 🤩: pos=(2,50), id=7
+8. 🤬: pos=(1,60), id=3
+9. 🍧: pos=(3,60), id=13
+10. 🤶: pos=(2,68), id=8
+11. 🍸: pos=(2,71), id=9
+12. 🤨: pos=(3,77), id=14
+13. 🍬: pos=(3,80), id=15
+14. 🍹: pos=(2,93), id=10
+15. 🍴: pos=(1,98), id=4
+16. 🍢: pos=(98,36), id=408
+17. 🍧: pos=(98,40), id=409
+> change_bite_coord 1 (40,50)
+Bite:
+   🍽: pos=(40,50), id=1
+> find_bite_with_coord (40,50)
+🍽: pos=(40,50), id=1
+> read "example-data/example-contours.txt" silent
+** Commands from 'example-data/example-contours.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-contours.txt'
+> all_contours
+Contours:
+1. hill_1_1: id=1
+2. hill_1_1_2: id=2
+3. hill_1_1_3: id=3
+4. hill_1_1_4: id=4
+5. hill_1_2_2: id=5
+6. hill_1_2_3: id=6
+7. hill_1_2_4: id=7
+8. hill_1_2_4: id=8
+9. valley_2_1: id=9
+10. valley_2_1_2: id=10
+11. valley_2_1_3: id=11
+12. valley_2_1_4: id=12
+13. valley_2_2_2: id=13
+14. valley_2_2_3: id=14
+15. valley_2_2_4: id=15
+16. valley_2_3_2: id=16
+17. valley_2_3_3: id=17
+18. valley_2_3_4: id=18
+19. valley_2_3_4: id=19
+> get_contour_name 1
+Name of contour with id 1 is hill_1_1
+> get_contour_coords 1
+Coordinates:
+(1,1)
+(2,1)
+(3,1)
+(4,1)
+(5,1)
+(6,1)
+(7,1)
+(8,1)
+(9,1)
+(10,1)
+(11,1)
+(12,1)
+(13,1)
+(14,1)
+(15,1)
+(16,1)
+(17,1)
+(1,8)
+(2,8)
+(3,8)
+(4,8)
+(5,8)
+(6,8)
+(7,8)
+(8,8)
+(9,8)
+(10,8)
+(11,8)
+(12,8)
+(13,8)
+(14,8)
+(15,8)
+(16,8)
+(17,8)
+(1,1)
+(1,2)
+(1,3)
+(1,4)
+(1,5)
+(1,6)
+(1,7)
+(18,1)
+(18,2)
+(18,3)
+(18,4)
+(18,5)
+(18,6)
+(18,7)
+(18,8)
+> get_bite_in_contours 1
+Bite does not belong to any contour.
+Bite:
+   🍽: pos=(40,50), id=1
+> get_bite_in_contours 2
+Bite does not belong to any contour.
+Bite:
+   🤡: pos=(1,22), id=2
+> 

@@ -1,0 +1,21 @@
+> # First go through compulsory operations
+> clear_all
+Cleared all bites
+> all_bites
+No bites!
+> read "example-data/example-bites.txt" silent
+** Commands from 'example-data/example-bites.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-bites.txt'
+> read "example-data/example-contours.txt" silent
+** Commands from 'example-data/example-contours.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-contours.txt'
+> #Then test its functionality
+Unknown command!
+> get_bites_closest_to (50,50)
+Bites:
+1. 🤩: pos=(2,50), id=7
+2. 🍧: pos=(3,60), id=13
+3. 🍧: pos=(98,40), id=409
+> 

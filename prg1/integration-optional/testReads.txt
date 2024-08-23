@@ -1,0 +1,4 @@
+testread "test-01-get_bites_closest_to-in.txt" "test-01-get_bites_closest_to-out.txt"
+testread "test-02-remove_bite-in.txt" "test-02-remove_bite-out.txt"
+testread "test-03-all_subcontours_of_contour-in.txt" "test-03-all_subcontours_of_contour-out.txt"
+testread "test-04-get_closest_common_ancestor_of_contours-in.txt" "test-04-get_closest_common_ancestor_of_contours-out.txt"

@@ -1,0 +1,22 @@
+all_bites
+get_bite_name 0
+get_bite_coord 0
+add_bite 1 "🍽" (1,9)
+add_bite 2 "🤡" (1,22)
+add_bite 3 "🤬" (1,60)
+add_bite 4 "🍴" (1,98)
+add_bite 5 "🤸" (2,24)
+add_bite 6 "🤣" (2,34)
+add_bite 7 "🤩" (2,50)
+add_bite 8 "🤶" (2,68)
+add_bite 9 "🍸" (2,71)
+add_bite 10 "🍹" (2,93)
+add_bite 11 "🍱" (3,9)
+add_bite 12 "🍢" (3,17)
+add_bite 13 "🍧" (3,60)
+add_bite 14 "🤨" (3,77)
+add_bite 15 "🍬" (3,80)
+add_bite 408 "🍢" (98,36)
+add_bite 409 "🍧" (98,40)
+all_bites
+get_bite_count

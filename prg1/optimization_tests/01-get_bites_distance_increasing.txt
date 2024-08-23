@@ -1,0 +1,7 @@
+# seed might be randomized in the grader, the repeat_counts WILL be 1 and 20
+random_seed 42
+# first command_count_1
+perftest get_bites_distance_increasing 42 100000
+# then command_count_20
+perftest 20*get_bites_distance_increasing 42 100000
+

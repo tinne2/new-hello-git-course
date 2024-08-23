@@ -1,0 +1,4 @@
+read "functionality-optional/test-00-all_subcontours_of_contours-in.txt"
+read "functionality-optional/test-01-get_bites_closest_to-in.txt"
+read "functionality-optional/test-02-remove_bite-in.txt"
+read "functionality-optional/test-03-get_closest_common_ancestor_of_contours-in.txt"

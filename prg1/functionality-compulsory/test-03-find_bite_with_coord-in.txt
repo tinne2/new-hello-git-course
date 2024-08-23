@@ -1,0 +1,37 @@
+clear_all
+all_bites
+get_bite_name 0
+get_bite_coord 0
+add_bite 0 "🍶" (14,1)
+get_bite_count
+all_bites
+get_bite_name 0
+get_bite_coord 0
+find_bite_with_coord (14,1)
+add_bite 1 "🌽" (11,19)
+get_bite_count
+all_bites
+get_bite_name 1
+get_bite_coord 1
+find_bite_with_coord (11,19)
+add_bite 2 "🦋" (18,13)
+get_bite_count
+all_bites
+get_bite_name 2
+get_bite_coord 2
+find_bite_with_coord (18,13)
+add_bite 3 "🎁" (14,13)
+get_bite_count
+all_bites
+get_bite_name 3
+get_bite_coord 3
+find_bite_with_coord (14,13)
+add_bite 4 "🍢" (8,2)
+get_bite_count
+all_bites
+get_bite_name 4
+get_bite_coord 4
+find_bite_with_coord (8,2)
+find_bite_with_coord (0,0)
+all_bites
+clear_all

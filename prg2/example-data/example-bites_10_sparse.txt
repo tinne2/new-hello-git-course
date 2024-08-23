@@ -1,0 +1,10 @@
+all_bites
+get_bite_name 0
+get_bite_coord 0
+add_bite 1 "🍔" (1,3)
+add_bite 2 "🍋" (1,6)
+add_bite 3 "🤶" (5,5)
+add_bite 4 "🍏" (6,2)
+add_bite 5 "🍓" (7,5)
+all_bites
+get_bite_count

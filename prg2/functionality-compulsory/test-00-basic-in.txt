@@ -1,0 +1,72 @@
+# Test adding connections and getting basic info
+# Empty state
+clear_all
+clear_connections
+all_bites
+# Add single bite
+add_bite 33 "🍉" (6,6)
+add_connection 1 33 33 (4,6) (4,4) (6,4)
+add_connection 2 33 33 (6,8) (7,8) (7,6)
+get_connection_coords 33 1
+get_connection_coords 33 2
+get_next_bites_from 33
+get_connections 33 33
+get_connections 33
+get_connections
+# Add multiple  bites
+clear_all
+get_connections
+all_bites
+add_bite 33 "🍉" (6,6)
+add_bite 11 "🍌" (2,2)
+add_bite 44 "🎂" (2, 8)
+add_bite 55 "🍪" (5,7)
+add_bite 66 "🍏" (3,5)
+add_bite 77 "🍓" (5,3)
+get_bite_count
+# Invalid bite add (existing bite)
+add_bite 33 "🍉" (6,6)
+# Invalid bite add (location occupied)
+add_bite 88 "🍉" (6,6)
+# Add connections
+add_connection 00 11 33 (2,6)
+add_connection 01 44 33 (6,8)
+add_connection 02 44 55 (2,7)
+add_connection 03 66 11 (7,5) (7,9) (1,9) (1,2)
+# Invalid connection add (existing connection)
+add_connection 00 11 33 (2,6)
+# Test getters
+get_next_bites_from 11
+get_next_bites_from 33
+get_next_bites_from 66
+get_next_bites_from 77
+# Test invalid getters
+get_next_bites_from 88
+# Test connection info
+get_connections 11 33
+get_connections 11 44
+get_connections 11 66
+get_connections 33 11
+get_connections 33 44
+get_connections 33 55
+get_connections 44 33
+get_connections 44 55
+# Invalid connection info
+get_connections 88 11
+get_connections 11 88
+get_connections 22 99
+get_connections 99 22
+# Test connection coords
+get_connection_coords 11 00
+get_connection_coords 11 03
+get_connection_coords 66 03
+# Invalid connection coords
+get_connection_coords 11 01
+get_connection_coords 11 04
+get_connection_coords 88 03
+# Clear and test
+clear_connections
+# Test a now removed connection
+get_next_bites_from 11
+get_connections 11 33
+get_connection_coords 11 00

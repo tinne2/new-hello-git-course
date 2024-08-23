@@ -1,0 +1,79 @@
+> clear_all
+Cleared all bites
+> read "example-data/example-bites_100.txt" silent
+** Commands from 'example-data/example-bites_100.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-bites_100.txt'
+> read "example-data/example-contours_100.txt" silent
+** Commands from 'example-data/example-contours_100.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-contours_100.txt'
+> read "example-data/example_connections_100.txt" silent
+** Commands from 'example-data/example_connections_100.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example_connections_100.txt'
+> add_connection 600 81 1 (1, 2)
+Connection:
+   id=600
+> add_connection 601 1 2
+Connection:
+   id=601
+> add_connection 602 2 7 (1, 50)
+Connection:
+   id=602
+> add_connection 603 174 182 (43, 47) (43,45)
+Connection:
+   id=603
+> add_connection 604 11 53 (3, 15) (4,15) (4, 13)
+Connection:
+   id=604
+> path_least_bites 1 244
+1. (1,9) -> (3,9) (distance 2)
+2. (3,9) -> (3,15) (distance 8)
+3. (3,15) -> (4,15) (distance 9)
+4. (4,15) -> (4,13) (distance 11)
+5. (4,13) -> (12,13) (distance 19)
+6. (12,13) -> (14,13) (distance 21)
+7. (14,13) -> (14,16) (distance 24)
+8. (14,16) -> (15,16) (distance 25)
+9. (15,16) -> (15,17) (distance 26)
+10. (15,17) -> (18,17) (distance 29)
+11. (18,17) -> (18,20) (distance 32)
+12. (18,20) -> (20,20) (distance 34)
+13. (20,20) -> (24,20) (distance 38)
+14. (24,20) -> (24,21) (distance 39)
+15. (24,21) -> (25,21) (distance 40)
+16. (25,21) -> (25,22) (distance 41)
+17. (25,22) -> (27,22) (distance 43)
+18. (27,22) -> (27,24) (distance 45)
+19. (27,24) -> (28,24) (distance 46)
+20. (28,24) -> (28,25) (distance 47)
+21. (28,25) -> (29,25) (distance 48)
+22. (29,25) -> (31,25) (distance 50)
+23. (31,25) -> (31,22) (distance 53)
+24. (31,22) -> (33,22) (distance 55)
+25. (33,22) -> (39,22) (distance 61)
+26. (39,22) -> (41,22) (distance 63)
+27. (41,22) -> (41,23) (distance 64)
+28. (41,23) -> (43,23) (distance 66)
+29. (43,23) -> (43,26) (distance 69)
+30. (43,26) -> (44,26) (distance 70)
+31. (44,26) -> (44,27) (distance 71)
+32. (44,27) -> (45,27) (distance 72)
+33. (45,27) -> (45,29) (distance 74)
+34. (45,29) -> (45,30) (distance 75)
+35. (45,30) -> (50,30) (distance 80)
+36. (50,30) -> (53,30) (distance 83)
+37. (53,30) -> (53,31) (distance 84)
+38. (53,31) -> (53,32) (distance 85)
+39. (53,32) -> (56,32) (distance 88)
+40. (56,32) -> (56,34) (distance 90)
+41. (56,34) -> (57,34) (distance 91)
+42. (57,34) -> (57,35) (distance 92)
+43. (57,35) -> (58,35) (distance 93)
+44. (58,35) -> (58,36) (distance 94)
+45. (58,36) -> (59,36) (distance 95)
+46. (59,36) -> (59,42) (distance 101)
+47. (59,42) -> (58,42) (distance 102)
+48. (58,42) (distance 102)
+> 

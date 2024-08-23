@@ -1,0 +1,23 @@
+clear_all
+# existing bite id
+add_bite 1 "🍌" (2,2)
+add_bite 1 "🍌" (2,2)
+# trying to add a connection with a bite that doesnt exist yet
+add_connection 01 1 2 (2,6)
+get_next_bites_from 1
+get_connections 1 2
+get_connection_coords 1 01
+# successful connection addition 
+add_bite 2 "🍉" (6,6)
+add_connection 01 1 2 (2,6)
+get_next_bites_from 1
+get_connections 1 2
+get_connection_coords 1 01
+# trying to add a connection that already exists
+add_connection 01 1 2 (2,6)
+# testing an invalid connection
+get_connection_coords 2 02
+# testing path from the same bite to the bite
+path_any 1 1
+# testing a path that doesnt exist
+path_any 1 0

@@ -1,0 +1,16 @@
+clear_all
+get_bite_count
+read "example-data/example-bites.txt" silent
+get_bite_count
+get_bite_name 1
+get_bite_coord 1
+get_bites_alphabetically
+get_bites_distance_increasing
+change_bite_coord 1 (40,50)
+find_bite_with_coord (40,50)
+read "example-data/example-contours.txt" silent
+all_contours
+get_contour_name 1
+get_contour_coords 1
+get_bite_in_contours 1
+get_bite_in_contours 2

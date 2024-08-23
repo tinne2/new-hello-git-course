@@ -1,0 +1,24 @@
+> # First go through compulsory operations
+> clear_all
+Cleared all bites
+> all_bites
+No bites!
+> read "example-data/example-bites.txt" silent
+** Commands from 'example-data/example-bites.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-bites.txt'
+> read "example-data/example-contours.txt" silent
+** Commands from 'example-data/example-contours.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-contours.txt'
+> #Then test its functionality
+Unknown command!
+> all_subcontours_of_contour 3
+Contours:
+1. hill_1_1_3: id=3
+2. hill_1_1_4: id=4
+> all_subcontours_of_contour 6
+Contours:
+1. hill_1_2_3: id=6
+2. hill_1_2_4: id=7
+> all_subcontours_of_contour 6

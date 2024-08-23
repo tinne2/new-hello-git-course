@@ -1,0 +1,7 @@
+read "functionality-compulsory/test-00-basic-bites-in.txt"
+read "functionality-compulsory/test-01-get_bites_alphabetically.txt"
+read "functionality-compulsory/test-02-bites_by_distance_increasing.txt"
+read "functionality-compulsory/test-03-find_bite_with_coord.txt"
+read "functionality-compulsory/test-04-change_bite_coord.txt"
+read "functionality-compulsory/test-05-contours-basic-in.txt"
+read "functionality-compulsory/test-06-get_bite_in_contours.txt"

@@ -1,0 +1,8 @@
+# First go through compulsory functionality
+clear_all
+all_bites
+read "example-data/example-bites.txt" silent
+read "example-data/example-contours.txt" silent
+#Then test the optional operation
+get_closest_common_ancestor_of_contours 3 4
+get_closest_common_ancestor_of_contours 3 8

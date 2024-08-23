@@ -1,0 +1,10 @@
+clear_all
+read "example-data/example-bites_100.txt" silent
+read "example-data/example-contours_100.txt" silent
+read "example-data/example_connections_100.txt" silent
+add_connection 600 81 1 (1, 2)
+add_connection 601 1 2
+add_connection 602 2 7 (1, 50)
+add_connection 603 174 182 (43, 47) (43,45)
+add_connection 604 11 53 (3, 15) (4,15) (4, 13)
+path_least_uphill 1 244

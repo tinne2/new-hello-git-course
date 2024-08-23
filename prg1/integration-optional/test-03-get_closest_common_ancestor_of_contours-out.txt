@@ -1,0 +1,22 @@
+> # First go through compulsory functionality
+> clear_all
+Cleared all bites
+> all_bites
+No bites!
+> read "example-data/example-bites.txt" silent
+** Commands from 'example-data/example-bites.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-bites.txt'
+> read "example-data/example-contours.txt" silent
+** Commands from 'example-data/example-contours.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-contours.txt'
+> #Then test the optional operation
+Unknown command!
+> get_closest_common_ancestor_of_contours 3 4
+Contour:
+   hill_1_1_2: id=2
+> get_closest_common_ancestor_of_contours 3 8
+No common parent contour found.
+Failed (NO_CONTOUR returned)!
+> get_closest_common_ancestor_of_contours 3 8

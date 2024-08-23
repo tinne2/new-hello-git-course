@@ -1,0 +1,66 @@
+> # First read in compulsory example
+> clear_all
+Cleared all bites
+> all_bites
+No bites!
+> read "example-data/example-bites.txt" silent
+** Commands from 'example-data/example-bites.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-bites.txt'
+> read "example-data/example-contours.txt" silent
+** Commands from 'example-data/example-contours.txt'
+...(output discarded in silent mode)...
+** End of commands from 'example-data/example-contours.txt'
+> # Then test optional operation
+> all_bites
+Bites:
+1. 🍽: pos=(1,9), id=1
+2. 🤡: pos=(1,22), id=2
+3. 🤬: pos=(1,60), id=3
+4. 🍴: pos=(1,98), id=4
+5. 🤸: pos=(2,24), id=5
+6. 🤣: pos=(2,34), id=6
+7. 🤩: pos=(2,50), id=7
+8. 🤶: pos=(2,68), id=8
+9. 🍸: pos=(2,71), id=9
+10. 🍹: pos=(2,93), id=10
+11. 🍱: pos=(3,9), id=11
+12. 🍢: pos=(3,17), id=12
+13. 🍧: pos=(3,60), id=13
+14. 🤨: pos=(3,77), id=14
+15. 🍬: pos=(3,80), id=15
+16. 🍢: pos=(98,36), id=408
+17. 🍧: pos=(98,40), id=409
+> get_bite_name 100
+Failed (NO_NAME returned)!
+> get_bite_coord 100
+Failed (NO_COORD returned)!
+> remove_bite 100
+Failed (NO_BITE returned)!
+> # Check if it exists after removal
+> all_bites
+Bites:
+1. 🍽: pos=(1,9), id=1
+2. 🤡: pos=(1,22), id=2
+3. 🤬: pos=(1,60), id=3
+4. 🍴: pos=(1,98), id=4
+5. 🤸: pos=(2,24), id=5
+6. 🤣: pos=(2,34), id=6
+7. 🤩: pos=(2,50), id=7
+8. 🤶: pos=(2,68), id=8
+9. 🍸: pos=(2,71), id=9
+10. 🍹: pos=(2,93), id=10
+11. 🍱: pos=(3,9), id=11
+12. 🍢: pos=(3,17), id=12
+13. 🍧: pos=(3,60), id=13
+14. 🤨: pos=(3,77), id=14
+15. 🍬: pos=(3,80), id=15
+16. 🍢: pos=(98,36), id=408
+17. 🍧: pos=(98,40), id=409
+> get_bite_name 100
+Failed (NO_NAME returned)!
+> get_bite_coord 100
+Failed (NO_COORD returned)!
+> remove_bite 100
+Failed (NO_BITE returned)!
+> remove_bite 100

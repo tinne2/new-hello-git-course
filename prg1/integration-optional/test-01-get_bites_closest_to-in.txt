@@ -1,0 +1,7 @@
+# First go through compulsory operations
+clear_all
+all_bites
+read "example-data/example-bites.txt" silent
+read "example-data/example-contours.txt" silent
+#Then test its functionality
+get_bites_closest_to (50,50)

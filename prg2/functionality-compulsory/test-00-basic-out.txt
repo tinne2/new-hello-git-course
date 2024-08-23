@@ -1,0 +1,185 @@
+> # Test adding connections and getting basic info
+> # Empty state
+> clear_all
+Cleared all bites
+> clear_connections
+Cleared all connections
+> all_bites
+No bites!
+> # Add single bite
+> add_bite 33 "🍉" (6,6)
+Bite:
+   🍉: pos=(6,6), id=33
+> add_connection 1 33 33 (4,6) (4,4) (6,4)
+Connection:
+   id=1
+> add_connection 2 33 33 (6,8) (7,8) (7,6)
+Connection:
+   id=2
+> get_connection_coords 33 1
+Coordinates:
+(6,6)
+(4,6)
+(4,4)
+(6,4)
+(6,6)
+> get_connection_coords 33 2
+Coordinates:
+(6,6)
+(6,8)
+(7,8)
+(7,6)
+(6,6)
+> get_next_bites_from 33
+Bite:
+   🍉: pos=(6,6), id=33
+> get_connections 33 33
+Connections:
+1. id=1
+2. id=2
+> get_connections 33
+Connections:
+1. id=1
+2. id=2
+> get_connections
+Connections:
+1. id=1
+2. id=2
+> # Add multiple  bites
+> clear_all
+Cleared all bites
+> get_connections
+No connections!
+> all_bites
+No bites!
+> add_bite 33 "🍉" (6,6)
+Bite:
+   🍉: pos=(6,6), id=33
+> add_bite 11 "🍌" (2,2)
+Bite:
+   🍌: pos=(2,2), id=11
+> add_bite 44 "🎂" (2, 8)
+Bite:
+   🎂: pos=(2,8), id=44
+> add_bite 55 "🍪" (5,7)
+Bite:
+   🍪: pos=(5,7), id=55
+> add_bite 66 "🍏" (3,5)
+Bite:
+   🍏: pos=(3,5), id=66
+> add_bite 77 "🍓" (5,3)
+Bite:
+   🍓: pos=(5,3), id=77
+> get_bite_count
+Number of bites: 6
+> # Invalid bite add (existing bite)
+> add_bite 33 "🍉" (6,6)
+Failed (NO_BITE returned)!
+> # Invalid bite add (location occupied)
+> add_bite 88 "🍉" (6,6)
+Failed (NO_BITE returned)!
+> # Add connections
+> add_connection 00 11 33 (2,6)
+Connection:
+   id=0
+> add_connection 01 44 33 (6,8)
+Connection:
+   id=1
+> add_connection 02 44 55 (2,7)
+Connection:
+   id=2
+> add_connection 03 66 11 (7,5) (7,9) (1,9) (1,2)
+Connection:
+   id=3
+> # Invalid connection add (existing connection)
+> add_connection 00 11 33 (2,6)
+Failed (NO_CONNECTION returned)!
+> # Test getters
+> get_next_bites_from 11
+Bites:
+1. 🍏: pos=(3,5), id=66
+2. 🍉: pos=(6,6), id=33
+> get_next_bites_from 33
+Bites:
+1. 🎂: pos=(2,8), id=44
+2. 🍌: pos=(2,2), id=11
+> get_next_bites_from 66
+Bite:
+   🍌: pos=(2,2), id=11
+> get_next_bites_from 77
+No bites!
+> # Test invalid getters
+> get_next_bites_from 88
+Failed (NO_BITE returned)!
+> # Test connection info
+> get_connections 11 33
+Connection:
+   id=0
+> get_connections 11 44
+No connections!
+> get_connections 11 66
+Connection:
+   id=3
+> get_connections 33 11
+Connection:
+   id=0
+> get_connections 33 44
+Connection:
+   id=1
+> get_connections 33 55
+No connections!
+> get_connections 44 33
+Connection:
+   id=1
+> get_connections 44 55
+Connection:
+   id=2
+> # Invalid connection info
+> get_connections 88 11
+Failed (NO_CONNECTION returned)!
+> get_connections 11 88
+Failed (NO_CONNECTION returned)!
+> get_connections 22 99
+Failed (NO_CONNECTION returned)!
+> get_connections 99 22
+Failed (NO_CONNECTION returned)!
+> # Test connection coords
+> get_connection_coords 11 00
+Coordinates:
+(2,2)
+(2,6)
+(6,6)
+> get_connection_coords 11 03
+Coordinates:
+(2,2)
+(1,2)
+(1,9)
+(7,9)
+(7,5)
+(3,5)
+> get_connection_coords 66 03
+Coordinates:
+(3,5)
+(7,5)
+(7,9)
+(1,9)
+(1,2)
+(2,2)
+> # Invalid connection coords
+> get_connection_coords 11 01
+Failed (NO_COORD returned)!
+> get_connection_coords 11 04
+Failed (NO_COORD returned)!
+> get_connection_coords 88 03
+Failed (NO_COORD returned)!
+> # Clear and test
+> clear_connections
+Cleared all connections
+> # Test a now removed connection
+> get_next_bites_from 11
+No bites!
+> get_connections 11 33
+No connections!
+> get_connection_coords 11 00
+Failed (NO_COORD returned)!
+> 

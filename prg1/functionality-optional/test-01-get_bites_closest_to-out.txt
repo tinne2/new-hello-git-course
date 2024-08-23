@@ -1,0 +1,110 @@
+> clear_all
+Cleared all bites
+> all_bites
+No bites!
+> get_bites_closest_to (11,1)
+No bites!
+> add_bite 0 "🍌" (2,19)
+Bite:
+   🍌: pos=(2,19), id=0
+> get_bites_closest_to (11,1)
+Bite:
+   🍌: pos=(2,19), id=0
+> add_bite 1 "🍌" (0,1)
+Bite:
+   🍌: pos=(0,1), id=1
+> get_bites_closest_to (11,1)
+Bites:
+1. 🍌: pos=(0,1), id=1
+2. 🍌: pos=(2,19), id=0
+> add_bite 2 "🍌" (10,0)
+Bite:
+   🍌: pos=(10,0), id=2
+> get_bites_closest_to (11,1)
+Bites:
+1. 🍌: pos=(10,0), id=2
+2. 🍌: pos=(0,1), id=1
+3. 🍌: pos=(2,19), id=0
+> add_bite 3 "🍌" (8,6)
+Bite:
+   🍌: pos=(8,6), id=3
+> add_bite 4 "🍌" (1,13)
+Bite:
+   🍌: pos=(1,13), id=4
+> add_bite 6 "🍌" (14,18)
+Bite:
+   🍌: pos=(14,18), id=6
+> get_bites_closest_to (11,1)
+Bites:
+1. 🍌: pos=(10,0), id=2
+2. 🍌: pos=(8,6), id=3
+3. 🍌: pos=(0,1), id=1
+> get_bites_closest_to (2,19)
+Bites:
+1. 🍌: pos=(2,19), id=0
+2. 🍌: pos=(1,13), id=4
+3. 🍌: pos=(14,18), id=6
+> get_bites_closest_to (15,8)
+Bites:
+1. 🍌: pos=(8,6), id=3
+2. 🍌: pos=(14,18), id=6
+3. 🍌: pos=(10,0), id=2
+> get_bites_closest_to (0,1)
+Bites:
+1. 🍌: pos=(0,1), id=1
+2. 🍌: pos=(10,0), id=2
+3. 🍌: pos=(8,6), id=3
+> get_bites_closest_to (1,11)
+Bites:
+1. 🍌: pos=(1,13), id=4
+2. 🍌: pos=(2,19), id=0
+3. 🍌: pos=(0,1), id=1
+> get_bites_closest_to (10,0)
+Bites:
+1. 🍌: pos=(10,0), id=2
+2. 🍌: pos=(8,6), id=3
+3. 🍌: pos=(0,1), id=1
+> get_bites_closest_to (10,3)
+Bites:
+1. 🍌: pos=(10,0), id=2
+2. 🍌: pos=(8,6), id=3
+3. 🍌: pos=(0,1), id=1
+> get_bites_closest_to (8,6)
+Bites:
+1. 🍌: pos=(8,6), id=3
+2. 🍌: pos=(10,0), id=2
+3. 🍌: pos=(0,1), id=1
+> get_bites_closest_to (17,5)
+Bites:
+1. 🍌: pos=(8,6), id=3
+2. 🍌: pos=(10,0), id=2
+3. 🍌: pos=(14,18), id=6
+> get_bites_closest_to (1,13)
+Bites:
+1. 🍌: pos=(1,13), id=4
+2. 🍌: pos=(2,19), id=0
+3. 🍌: pos=(0,1), id=1
+> get_bites_closest_to (19,9)
+Bites:
+1. 🍌: pos=(8,6), id=3
+2. 🍌: pos=(14,18), id=6
+3. 🍌: pos=(10,0), id=2
+> get_bites_closest_to (14,18)
+Bites:
+1. 🍌: pos=(14,18), id=6
+2. 🍌: pos=(2,19), id=0
+3. 🍌: pos=(8,6), id=3
+> get_bites_closest_to (19,9)
+Bites:
+1. 🍌: pos=(8,6), id=3
+2. 🍌: pos=(14,18), id=6
+3. 🍌: pos=(10,0), id=2
+> add_bite 5 "🍌" (24,18)
+Bite:
+   🍌: pos=(24,18), id=5
+> get_bites_closest_to (19,9)
+Bites:
+1. 🍌: pos=(8,6), id=3
+2. 🍌: pos=(24,18), id=5
+3. 🍌: pos=(14,18), id=6
+> 

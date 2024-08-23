@@ -1,0 +1,195 @@
+> # Test path_least_uphill
+> clear_all
+Cleared all bites
+> clear_connections
+Cleared all connections
+> all_bites
+No bites!
+> # Add bites
+> add_bite 1 "🍌" (2,2)
+Bite:
+   🍌: pos=(2,2), id=1
+> add_bite 2 "🍉" (12,6)
+Bite:
+   🍉: pos=(12,6), id=2
+> add_bite 3 "🎂" (2,8)
+Bite:
+   🎂: pos=(2,8), id=3
+> get_bite_count
+Number of bites: 3
+> # Add connections
+> add_connection 01 1 2 (2,6)
+Connection:
+   id=1
+> add_connection 02 2 3 (12,8)
+Connection:
+   id=2
+> # Test basic routing
+> path_least_uphill 1 2
+1. (2,2) -> (2,6) (distance 4)
+2. (2,6) -> (12,6) (distance 14)
+3. (12,6) (distance 14)
+> path_least_uphill 2 3
+1. (12,6) -> (12,8) (distance 2)
+2. (12,8) -> (2,8) (distance 12)
+3. (2,8) (distance 12)
+> path_least_uphill 1 3
+1. (2,2) -> (2,6) (distance 4)
+2. (2,6) -> (12,6) (distance 14)
+3. (12,6) -> (12,8) (distance 16)
+4. (12,8) -> (2,8) (distance 26)
+5. (2,8) (distance 26)
+> path_least_uphill 3 2
+1. (2,8) -> (12,8) (distance 10)
+2. (12,8) -> (12,6) (distance 12)
+3. (12,6) (distance 12)
+> path_least_uphill 3 1
+1. (2,8) -> (12,8) (distance 10)
+2. (12,8) -> (12,6) (distance 12)
+3. (12,6) -> (2,6) (distance 22)
+4. (2,6) -> (2,2) (distance 26)
+5. (2,2) (distance 26)
+> # Test non-existing bite
+> path_least_uphill 1 4
+Path not found!
+> # Test Non-existing path
+> add_bite 4 "🍏" (13, 5)
+Bite:
+   🍏: pos=(13,5), id=4
+> path_least_uphill 1 4
+Path empty!
+> # Test a T-crossing
+> add_connection 03 2 4 (12,5)
+Connection:
+   id=3
+> path_least_uphill 2 4
+1. (12,6) -> (12,5) (distance 1)
+2. (12,5) -> (13,5) (distance 2)
+3. (13,5) (distance 2)
+> path_least_uphill 1 4
+1. (2,2) -> (2,6) (distance 4)
+2. (2,6) -> (12,6) (distance 14)
+3. (12,6) -> (12,5) (distance 15)
+4. (12,5) -> (13,5) (distance 16)
+5. (13,5) (distance 16)
+> path_least_uphill 4 3
+1. (13,5) -> (12,5) (distance 1)
+2. (12,5) -> (12,6) (distance 2)
+3. (12,6) -> (12,8) (distance 4)
+4. (12,8) -> (2,8) (distance 14)
+5. (2,8) (distance 14)
+> path_least_uphill 3 1
+1. (2,8) -> (12,8) (distance 10)
+2. (12,8) -> (12,6) (distance 12)
+3. (12,6) -> (2,6) (distance 22)
+4. (2,6) -> (2,2) (distance 26)
+5. (2,2) (distance 26)
+> # Add a loop and test
+> add_bite 5 "🍓" (14,6)
+Bite:
+   🍓: pos=(14,6), id=5
+> add_bite 6 "🍪" (12,9)
+Bite:
+   🍪: pos=(12,9), id=6
+> add_connection 04 4 5 (14,5)
+Connection:
+   id=4
+> add_connection 05 5 6 (15,6) (15,9)
+Connection:
+   id=5
+> add_connection 06 3 6 (2,9)
+Connection:
+   id=6
+> path_least_uphill 2 6
+1. (12,6) -> (12,5) (distance 1)
+2. (12,5) -> (13,5) (distance 2)
+3. (13,5) -> (14,5) (distance 3)
+4. (14,5) -> (14,6) (distance 4)
+5. (14,6) -> (15,6) (distance 5)
+6. (15,6) -> (15,9) (distance 8)
+7. (15,9) -> (12,9) (distance 11)
+8. (12,9) (distance 11)
+> path_least_uphill 1 4
+1. (2,2) -> (2,6) (distance 4)
+2. (2,6) -> (12,6) (distance 14)
+3. (12,6) -> (12,5) (distance 15)
+4. (12,5) -> (13,5) (distance 16)
+5. (13,5) (distance 16)
+> path_least_uphill 3 4
+1. (2,8) -> (12,8) (distance 10)
+2. (12,8) -> (12,6) (distance 12)
+3. (12,6) -> (12,5) (distance 13)
+4. (12,5) -> (13,5) (distance 14)
+5. (13,5) (distance 14)
+> path_least_uphill 1 5
+1. (2,2) -> (2,6) (distance 4)
+2. (2,6) -> (12,6) (distance 14)
+3. (12,6) -> (12,5) (distance 15)
+4. (12,5) -> (13,5) (distance 16)
+5. (13,5) -> (14,5) (distance 17)
+6. (14,5) -> (14,6) (distance 18)
+7. (14,6) (distance 18)
+> path_least_uphill 2 4
+1. (12,6) -> (12,5) (distance 1)
+2. (12,5) -> (13,5) (distance 2)
+3. (13,5) (distance 2)
+> # Add contours
+> add_contour 10 "hill-1"  1 (12,5)
+Contour:
+   hill-1: id=10
+> path_least_uphill 2 4
+1. (12,6) -> (12,8) (distance 2)
+2. (12,8) -> (2,8) (distance 12)
+3. (2,8) -> (2,9) (distance 13)
+4. (2,9) -> (12,9) (distance 23)
+5. (12,9) -> (15,9) (distance 26)
+6. (15,9) -> (15,6) (distance 29)
+7. (15,6) -> (14,6) (distance 30)
+8. (14,6) -> (14,5) (distance 31)
+9. (14,5) -> (13,5) (distance 32)
+10. (13,5) (distance 32)
+> path_least_uphill 4 1
+1. (13,5) -> (14,5) (distance 1)
+2. (14,5) -> (14,6) (distance 2)
+3. (14,6) -> (15,6) (distance 3)
+4. (15,6) -> (15,9) (distance 6)
+5. (15,9) -> (12,9) (distance 9)
+6. (12,9) -> (2,9) (distance 19)
+7. (2,9) -> (2,8) (distance 20)
+8. (2,8) -> (12,8) (distance 30)
+9. (12,8) -> (12,6) (distance 32)
+10. (12,6) -> (2,6) (distance 42)
+11. (2,6) -> (2,2) (distance 46)
+12. (2,2) (distance 46)
+> path_least_uphill 5 6
+1. (14,6) -> (15,6) (distance 1)
+2. (15,6) -> (15,9) (distance 4)
+3. (15,9) -> (12,9) (distance 7)
+4. (12,9) (distance 7)
+> add_contour 20 "valley-1-1" -1 (13,7) (13,8) (13,9) (13,10) (14,10) (15,10) (16,10) (16,9) (16,8) (16,7) (15,7) (14,7)
+Contour:
+   valley-1-1: id=20
+> add_contour 21 "valley-1-2" -2 (14,8) (14,9) (15,8) (15,9)
+Contour:
+   valley-1-2: id=21
+> path_least_uphill 2 4
+1. (12,6) -> (12,5) (distance 1)
+2. (12,5) -> (13,5) (distance 2)
+3. (13,5) (distance 2)
+> path_least_uphill 4 1
+1. (13,5) -> (12,5) (distance 1)
+2. (12,5) -> (12,6) (distance 2)
+3. (12,6) -> (2,6) (distance 12)
+4. (2,6) -> (2,2) (distance 16)
+5. (2,2) (distance 16)
+> path_least_uphill 5 6
+1. (14,6) -> (14,5) (distance 1)
+2. (14,5) -> (13,5) (distance 2)
+3. (13,5) -> (12,5) (distance 3)
+4. (12,5) -> (12,6) (distance 4)
+5. (12,6) -> (12,8) (distance 6)
+6. (12,8) -> (2,8) (distance 16)
+7. (2,8) -> (2,9) (distance 17)
+8. (2,9) -> (12,9) (distance 27)
+9. (12,9) (distance 27)
+> 

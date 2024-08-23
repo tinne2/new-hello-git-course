@@ -1,0 +1,15 @@
+# First read in compulsory example
+clear_all
+all_bites
+read "example-data/example-bites.txt" silent
+read "example-data/example-contours.txt" silent
+# Then test optional operation
+all_bites
+get_bite_name 100
+get_bite_coord 100
+remove_bite 100
+# Check if it exists after removal
+all_bites
+get_bite_name 100
+get_bite_coord 100
+remove_bite 100

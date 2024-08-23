@@ -1,0 +1,50 @@
+# Test path_least_uphill
+clear_all
+clear_connections
+all_bites
+# Add bites
+add_bite 1 "🍌" (2,2)
+add_bite 2 "🍉" (12,6)
+add_bite 3 "🎂" (2,8)
+get_bite_count
+# Add connections
+add_connection 01 1 2 (2,6)
+add_connection 02 2 3 (12,8)
+# Test basic routing
+path_least_uphill 1 2
+path_least_uphill 2 3
+path_least_uphill 1 3
+path_least_uphill 3 2
+path_least_uphill 3 1
+# Test non-existing bite
+path_least_uphill 1 4
+# Test Non-existing path
+add_bite 4 "🍏" (13, 5)
+path_least_uphill 1 4
+# Test a T-crossing
+add_connection 03 2 4 (12,5)
+path_least_uphill 2 4
+path_least_uphill 1 4
+path_least_uphill 4 3
+path_least_uphill 3 1
+# Add a loop and test
+add_bite 5 "🍓" (14,6)
+add_bite 6 "🍪" (12,9)
+add_connection 04 4 5 (14,5)
+add_connection 05 5 6 (15,6) (15,9)
+add_connection 06 3 6 (2,9)
+path_least_uphill 2 6
+path_least_uphill 1 4
+path_least_uphill 3 4
+path_least_uphill 1 5
+path_least_uphill 2 4
+# Add contours
+add_contour 10 "hill-1"  1 (12,5)
+path_least_uphill 2 4
+path_least_uphill 4 1
+path_least_uphill 5 6
+add_contour 20 "valley-1-1" -1 (13,7) (13,8) (13,9) (13,10) (14,10) (15,10) (16,10) (16,9) (16,8) (16,7) (15,7) (14,7)
+add_contour 21 "valley-1-2" -2 (14,8) (14,9) (15,8) (15,9)
+path_least_uphill 2 4
+path_least_uphill 4 1
+path_least_uphill 5 6

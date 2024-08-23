@@ -1,0 +1,1 @@
+To run these tests using the testReads in the testReads.txt, remember to change the working directory to this folder. 
