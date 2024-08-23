@@ -4,6 +4,7 @@ In the following folder structure, you can see
 - weekly exercises (wk*) and 
 - the final assignment in two parts (prg1 and prg2):
 
+```
 |── prg1
 │   ├── example-data
 │   ├── functionality-compulsory
@@ -28,6 +29,7 @@ In the following folder structure, you can see
 │       └── task_list_v2
 └── wk05_graphs
     └── improving_functions
+```
 
 
 
