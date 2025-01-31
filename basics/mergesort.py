@@ -34,8 +34,7 @@ def merge(left, right):
 
 if __name__ == "__main__":
     input_str = input("Enter numbers, separated by ',': ")
-
-            quit(1)
+    quit(1)
 
     debug_print(value_list=value_list)
 
