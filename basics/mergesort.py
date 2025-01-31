@@ -1,6 +1,3 @@
-print("{}: {}".format(key, value))
-
-
 def mergesort(array):
     debug_print(array=array)
     if len(array) <= 1:
@@ -37,8 +34,15 @@ def merge(left, right):
 
 if __name__ == "__main__":
     input_str = input("Enter numbers, separated by ',': ")
-
-            quit(1)
+    input_list = input_str.split(",")
+    value_list = []
+    
+    for x in input_list:
+        try:
+            value_list.append(int(x))
+        except ValueError as err:
+            print("Invalid input.")
+            quit(1)  # This line should be aligned here with the try-except block.
 
     debug_print(value_list=value_list)
 
