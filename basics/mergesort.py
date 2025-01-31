@@ -1,3 +1,8 @@
+def debug_print(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+
 def mergesort(array):
     debug_print(array=array)
     if len(array) <= 1:
@@ -42,7 +47,7 @@ if __name__ == "__main__":
             value_list.append(int(x))
         except ValueError as err:
             print("Invalid input.")
-            quit(1)  # This line should be aligned here with the try-except block.
+            quit(1)  # Make sure this line is properly indented within the try-except block.
 
     debug_print(value_list=value_list)
 
