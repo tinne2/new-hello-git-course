@@ -9,24 +9,30 @@ def merge_sort(arr):
 
 def merge(left, right):
     merged = []
-    while left and right:
-        if left[0] < right[0]:
-            merged.append(left.pop(0))
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            merged.append(left[i])
+            i += 1
         else:
-            merged.append(right.pop(0))
-    merged.extend(left)
-    merged.extend(right)
+            merged.append(right[j])
+            j += 1
+    merged.extend(left[i:])
+    merged.extend(right[j:])
     return merged
 
 if __name__ == "__main__":
     # Take input from user
     input_string = input("Enter numbers, separated by ',': ")
     
-    # Convert input to a list of integers
-    value_list = list(map(int, input_string.split(',')))
-    
-    # Call merge_sort and print the result
-    sorted_list = merge_sort(value_list)
-    
-    # Print the sorted list (this is the expected output)
-    print(sorted_list)
+    try:
+        # Convert input to a list of integers
+        value_list = list(map(int, input_string.split(',')))
+        
+        # Call merge_sort and print the result
+        sorted_list = merge_sort(value_list)
+        
+        # Print the sorted list (this is the expected output)
+        print("Sorted list:", sorted_list)
+    except ValueError:
+        print("Please enter a valid list of numbers separated by commas.")
