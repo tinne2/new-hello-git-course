@@ -1,1 +1,0 @@
-testread "test-00-compulsory-in.txt" "test-00-compulsory-out.txt"

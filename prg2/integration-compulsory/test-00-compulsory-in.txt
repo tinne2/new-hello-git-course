@@ -1,9 +1,0 @@
-clear_all
-clear_connections
-all_bites
-read "example-data/example-bites_100.txt" silent
-read "example-data/example_connections_100.txt" silent
-get_next_bites_from 24
-get_connections 11 12
-get_connection_coords 26 42
-path_any 1 50

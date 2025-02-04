@@ -1,1 +1,0 @@
-To run these tests, remember to change the working directory to this folder. 
