@@ -33,6 +33,6 @@ if __name__ == "__main__":
         sorted_list = merge_sort(value_list)
         
         # Print the sorted list (this is the expected output)
-        print("Sorted list:", sorted_list)
+        print(f"Sorted list: {sorted_list}")
     except ValueError:
         print("Please enter a valid list of numbers separated by commas.")
