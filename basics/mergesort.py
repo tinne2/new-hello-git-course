@@ -1,47 +1,48 @@
-def mergesort(arr):
-    if len(arr) > 1:
-        mid = len(arr) // 2  # Finding the mid of the array
-        left = arr[:mid]  # Dividing the elements into 2 halves
-        right = arr[mid:]
-
-        mergesort(left)  # Sorting the first half
-        mergesort(right)  # Sorting the second half
-
-        i = j = k = 0
-
-        # Merging the sorted halves
-        while i < len(left) and j < len(right):
-            if left[i] < right[j]:
-                arr[k] = left[i]
-                i += 1
-            else:
-                arr[k] = right[j]
-                j += 1
-            k += 1
-
-        # Checking if any element was left
-        while i < len(left):
-            arr[k] = left[i]
-            i += 1
-            k += 1
-
-        while j < len(right):
-            arr[k] = right[j]
-            j += 1
-            k += 1
+def debug_print(*args, **kwargs):
+    # A simple debug print function to show values
+    for key, value in kwargs.items():
+        print("{}: {}".format(key, value))
 
 
-def main():
-    # Input values as integers
-    input_list = input("Enter numbers, separated by ',': ").split(',')
-    input_list = [int(x.strip()) for x in input_list]
+def mergesort(array):
+    debug_print(array=array)
+    if len(array) <= 1:
+        return array
 
-    print(f"Initial list: {input_list}")
+    m = len(array) // 2
+    debug_print(m=m)
 
-    mergesort(input_list)
+    left = mergesort(array[:m])
+    right = mergesort(array[m:])
 
-    print(f"Sorted list: {input_list}")
+    return merge(left, right)
+
+
+def merge(left, right):
+    debug_print(debug_msg="Merging...", left=left, right=right)
+
+    merged = []
+
+    while len(left) > 0 and len(right) > 0:
+        if left[0] <= right[0]:
+            merged.append(left.pop(0))
+        else:
+            merged.append(right.pop(0))
+
+    if len(left) > 0:
+        merged += left
+    else:
+        merged += right
+
+    debug_print(merged=merged)
+    return merged
 
 
 if __name__ == "__main__":
-    main()
+    input_str = input("Enter numbers, separated by ',': ")
+    value_list = [int(x.strip()) for x in input_str.split(',')]
+    
+    debug_print(value_list=value_list)
+
+    sorted_list = mergesort(value_list)
+    print(sorted_list)
