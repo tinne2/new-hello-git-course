@@ -1,7 +1,5 @@
-def debug_print(*args, **kwargs):
-    # A simple debug print function to show values
-    for key, value in kwargs.items():
-        print("{}: {}".format(key, value))
+def debug_print(debug_msg=None, **kwargs):
+    print("{}: {}".format(key, value))
 
 
 def mergesort(array):
@@ -40,8 +38,12 @@ def merge(left, right):
 
 if __name__ == "__main__":
     input_str = input("Enter numbers, separated by ',': ")
-    value_list = [int(x.strip()) for x in input_str.split(',')]
-    
+    try:
+        value_list = [int(x.strip()) for x in input_str.split(',')]
+    except ValueError:
+        print("Invalid input.")
+        quit(1)
+
     debug_print(value_list=value_list)
 
     sorted_list = mergesort(value_list)
